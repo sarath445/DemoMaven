@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 
 public class Pageobject {
     WebDriver driver;
+    WebELement mail = driver.findElement(demomail);
 
 //initilaizing constructor.
     public Pageobject(WebDriver driver){
@@ -29,10 +30,12 @@ public class Pageobject {
         driver.findElement(By.id("welocome")).click();
     }
 
-    public String getrandommail(String email){
-        WebElement mail = driver.findElement(demomail);
-        mail.sendKeys(email);
-        return mail.getAttribute(email);
+    public void getrandommail(String email){
+       mail.sendKeys(email);
+        }
+    public String getmail(){
+        return mail.getattribute("value")
     }
+    
 
 }
